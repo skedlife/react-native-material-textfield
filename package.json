@@ -1,6 +1,6 @@
 {
   "name": "react-native-material-textfield-sked",
-  "version": "0.16.5",
+  "version": "0.18.0",
   "license": "BSD-3-Clause",
   "author": "Alexander Nazarov <n4kz@n4kz.com>",
   "description": "Material textfield",
@@ -39,8 +39,8 @@
     "react-native": ">=0.55.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/runtime": "^7.5.5",
+    "@babel/core": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
     "babel-eslint": "^10.0.0",
     "babel-jest": "^24.9.0",
     "eslint": "^6.5.0",
@@ -48,9 +48,12 @@
     "eslint-plugin-react-native": "^3.7.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
-    "react": "16.10.2",
-    "react-native": "0.61.2",
-    "react-test-renderer": "16.10.2"
+    "react": "18.2.0",
+    "react-native": "0.71.11",
+    "@tsconfig/react-native": "^2.0.2",
+    "@types/jest": "^29.2.1",
+    "@types/react": "^18.0.24",
+    "@types/react-test-renderer": "^18.0.0",
   },
   "scripts": {
     "test": "eslint index.js src && jest --silent",

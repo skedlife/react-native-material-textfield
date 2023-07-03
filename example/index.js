@@ -1,3 +1,6 @@
-import init from './app';
+/**
+ * @format
+ */
 
+import init from './app.js';
 init();

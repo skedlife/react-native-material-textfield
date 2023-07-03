@@ -6,8 +6,7 @@ import {
   SafeAreaView,
   Platform,
 } from 'react-native';
-import { RaisedTextButton } from 'react-native-material-buttons';
-import { TextField } from 'react-native-material-textfield';
+import { TextField } from 'react-native-material-textfield-sked';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
 let styles = {
@@ -260,12 +259,6 @@ export default function init() {
             </View>
 
             <View style={styles.buttonContainer}>
-              <RaisedTextButton
-                onPress={this.onSubmit}
-                title='submit'
-                color={TextField.defaultProps.tintColor}
-                titleColor='white'
-              />
             </View>
           </ScrollView>
         </SafeAreaView>
