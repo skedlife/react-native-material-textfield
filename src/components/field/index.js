@@ -84,10 +84,6 @@ export default class TextField extends PureComponent {
 
     labelOffset: Label.propTypes.offset,
 
-    labelTextStyle: Text.propTypes.style,
-    titleTextStyle: Text.propTypes.style,
-    affixTextStyle: Text.propTypes.style,
-
     tintColor: PropTypes.string,
     textColor: PropTypes.string,
     baseColor: PropTypes.string,
@@ -116,9 +112,6 @@ export default class TextField extends PureComponent {
 
     prefix: PropTypes.string,
     suffix: PropTypes.string,
-
-    containerStyle: ViewPropTypes.style,
-    inputContainerStyle: ViewPropTypes.style,
   };
 
   static inputContainerStyle = styles.inputContainer;
@@ -449,22 +442,6 @@ export default class TextField extends PureComponent {
       + contentInset.input;
   }
 
-  inputProps() {
-    let store = {};
-
-    for (let key in TextInput.propTypes) {
-      if ('defaultValue' === key) {
-        continue;
-      }
-
-      if (key in this.props) {
-        store[key] = this.props[key];
-      }
-    }
-
-    return store;
-  }
-
   inputStyle() {
     let { fontSize, baseColor, textColor, disabled, multiline } = this.props;
 
@@ -611,15 +588,14 @@ export default class TextField extends PureComponent {
       style: inputStyleOverrides,
     } = this.props;
 
-    let props = this.inputProps();
     let inputStyle = this.inputStyle();
 
     return (
       <TextInput
         selectionColor={tintColor}
+        textContentType='none'
 
-        {...props}
-
+        {...this.props}
         style={[styles.input, inputStyle, inputStyleOverrides]}
         editable={!disabled && editable}
         onChange={this.onChange}
