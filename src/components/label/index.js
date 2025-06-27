@@ -45,6 +45,8 @@ export default class Label extends PureComponent {
 
     style: PropTypes.instanceOf(Animated.Text),
     label: PropTypes.string,
+
+    maxFontSizeMultiplier: PropTypes.number,
   };
 
   render() {
@@ -62,6 +64,7 @@ export default class Label extends PureComponent {
       style,
       focusAnimation,
       labelAnimation,
+      maxFontSizeMultiplier,
       ...props
     } = this.props;
 
@@ -111,7 +114,10 @@ export default class Label extends PureComponent {
 
     return (
       <Animated.View style={[styles.container, containerStyle]}>
-        <Animated.Text style={[styles.text, style, textStyle]} {...props}>
+        <Animated.Text
+          style={[styles.text, style, textStyle]}
+          maxFontSizeMultiplier={maxFontSizeMultiplier}
+          {...props}>
           {label}
         </Animated.Text>
       </Animated.View>

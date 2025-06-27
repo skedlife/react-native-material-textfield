@@ -477,6 +477,7 @@ export default class TextField extends PureComponent {
       fontSize,
       labelFontSize,
       labelTextStyle,
+      maxFontSizeMultiplier,
     } = this.props;
 
     return (
@@ -487,6 +488,7 @@ export default class TextField extends PureComponent {
         offset={offset}
         label={label}
         style={labelTextStyle}
+        maxFontSizeMultiplier={maxFontSizeMultiplier}
       />
     );
   }
@@ -541,6 +543,7 @@ export default class TextField extends PureComponent {
       errorColor,
       titleTextStyle: style,
       characterRestriction: limit,
+      maxFontSizeMultiplier,
     } = this.props;
 
     let { length: count } = this.value();
@@ -570,6 +573,7 @@ export default class TextField extends PureComponent {
       error,
       disabled,
       focusAnimation,
+      maxFontSizeMultiplier,
     };
 
     return (

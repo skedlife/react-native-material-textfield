@@ -17,6 +17,7 @@ export default class Helper extends PureComponent {
     errorColor: PropTypes.string,
 
     focusAnimation: PropTypes.instanceOf(Animated.Value),
+    maxFontSizeMultiplier: PropTypes.number,
   };
 
   constructor(props) {
@@ -70,6 +71,7 @@ export default class Helper extends PureComponent {
       disabled,
       baseColor,
       errorColor,
+      maxFontSizeMultiplier,
     } = this.props;
 
     let text = errored?
@@ -89,7 +91,10 @@ export default class Helper extends PureComponent {
     };
 
     return (
-      <Animated.Text style={[styles.text, style, textStyle]}>
+      <Animated.Text
+        style={[styles.text, style, textStyle]}
+        maxFontSizeMultiplier={maxFontSizeMultiplier}
+       >
         {text}
       </Animated.Text>
     );
